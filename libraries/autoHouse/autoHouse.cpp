@@ -14,8 +14,8 @@ automatedHouse::automatedHouse(int ST_CP, int SH_CP, int DS, int DP1, int DP2, i
 	buttonPins[1] = B2P;
 	buttonPins[2] = B3P;
 	buttonPins[3] = B4P;
-    tempPin = TMP;
-    lightPin = LP;
+	tempPin = TMP;
+	lightPin = LP;
 	fanPin = FP;
 	lightControlPin = LCP;
 }
@@ -31,14 +31,13 @@ void automatedHouse::setup()
 	{
 		pinMode(buttonPins[i],INPUT);
 		digitalWrite(buttonPins[i], HIGH);
-	    buttonBounce[i].attach(buttonPins[i]);
-	    buttonBounce[i].interval(5);
-
-	    pinMode(digitPins[i], OUTPUT);	
+		buttonBounce[i].attach(buttonPins[i]);
+		buttonBounce[i].interval(5);
+		pinMode(digitPins[i], OUTPUT);	
 	}
 	
-    pinMode(tempPin, INPUT);
-    pinMode(lightPin, INPUT);
+	pinMode(tempPin, INPUT);
+	pinMode(lightPin, INPUT);
 	pinMode(latchPin, OUTPUT);
 	pinMode(fanPin, OUTPUT);
 	pinMode(lightControlPin, OUTPUT);
@@ -161,7 +160,7 @@ void automatedHouse::displayNumber(int number)
 	int ten = temp/10 ;
 	temp = temp%10;
 	int unit = temp;
-  
+	
 	setDigit(digitPins[0], unit);
 	if(number >= 10) setDigit(digitPins[1], ten);
 	if(number >= 100) setDigit(digitPins[2], hundred);
