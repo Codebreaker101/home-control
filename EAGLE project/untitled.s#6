@@ -2720,10 +2720,12 @@ Source: www.kingbright.com</description>
 <part name="R19" library="eagle-ltspice" deviceset="R" device="0207/10"/>
 <part name="R20" library="eagle-ltspice" deviceset="R" device="0207/10"/>
 <part name="Q1" library="gm-trans" deviceset="2N2222*" device=""/>
+<part name="T5" library="transistor" deviceset="2N2222" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="-33.02" y="139.7" size="1.778" layer="114">DC MOTOR (FAN)</text>
 </plain>
 <instances>
 <instance part="IC1" gate="A" x="93.98" y="48.26" rot="R180"/>
@@ -2764,6 +2766,7 @@ Source: www.kingbright.com</description>
 <instance part="R19" gate="G$1" x="45.72" y="160.02" rot="MR180"/>
 <instance part="R20" gate="G$1" x="45.72" y="152.4" rot="MR180"/>
 <instance part="Q1" gate="G$1" x="30.48" y="190.5" rot="R90"/>
+<instance part="T5" gate="G$1" x="17.78" y="134.62" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -3184,7 +3187,14 @@ Source: www.kingbright.com</description>
 <junction x="142.24" y="101.6"/>
 <wire x1="142.24" y1="193.04" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="E"/>
-<wire x1="35.56" y1="193.04" x2="142.24" y2="193.04" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="193.04" x2="43.18" y2="193.04" width="0.1524" layer="91"/>
+<pinref part="T5" gate="G$1" pin="E"/>
+<wire x1="43.18" y1="193.04" x2="142.24" y2="193.04" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="129.54" x2="5.08" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="129.54" x2="5.08" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="200.66" x2="43.18" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="200.66" x2="43.18" y2="193.04" width="0.1524" layer="91"/>
+<junction x="43.18" y="193.04"/>
 </segment>
 </net>
 <net name="N$40" class="0">
@@ -3280,6 +3290,17 @@ Source: www.kingbright.com</description>
 <wire x1="63.5" y1="182.88" x2="63.5" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="PCB1" gate="G$1" pin="~5"/>
 <wire x1="63.5" y1="157.48" x2="91.44" y2="157.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$48" class="0">
+<segment>
+<pinref part="T5" gate="G$1" pin="B"/>
+<wire x1="20.32" y1="134.62" x2="60.96" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="134.62" x2="60.96" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="149.86" x2="83.82" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="149.86" x2="83.82" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="PCB1" gate="G$1" pin="~3"/>
+<wire x1="83.82" y1="162.56" x2="91.44" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

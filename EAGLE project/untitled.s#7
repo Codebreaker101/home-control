@@ -2599,6 +2599,80 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="gm-trans">
+<description>&lt;b&gt;Transistors&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;small signal amps (e.g., 2N508x)
+&lt;li&gt;switching transistors (e.g., 2N2222, 2N390x)
+&lt;li&gt;JFETs (e.g., J201, 2N3819, 2N5457)
+&lt;li&gt;MOSFETs (e.g., BS170, BS250)
+&lt;li&gt;mostly copied from Eagle libraries
+&lt;/ul&gt;</description>
+<packages>
+<package name="TO18">
+<description>&lt;b&gt;TO-18&lt;/b&gt;</description>
+<wire x1="0.9289" y1="2.227" x2="2.227" y2="0.9289" width="0.0508" layer="51" curve="-44.717164" cap="flat"/>
+<wire x1="0.9289" y1="-2.227" x2="2.227" y2="-0.9289" width="0.0508" layer="51" curve="44.717164" cap="flat"/>
+<wire x1="-3.937" y1="-0.508" x2="-3.937" y2="0.508" width="0.127" layer="21"/>
+<wire x1="-2.227" y1="-0.9289" x2="0.929" y2="2.2271" width="0.0508" layer="21" curve="-135.281008" cap="flat"/>
+<wire x1="-2.227" y1="-0.9289" x2="-0.9289" y2="-2.227" width="0.0508" layer="51" curve="44.717164" cap="flat"/>
+<wire x1="-3.937" y1="-0.508" x2="-2.8765" y2="-0.508" width="0.127" layer="21"/>
+<wire x1="-0.9289" y1="-2.227" x2="0.9289" y2="-2.227" width="0.0508" layer="21" curve="45.282836" cap="flat"/>
+<wire x1="-3.937" y1="0.508" x2="-2.8765" y2="0.508" width="0.127" layer="21"/>
+<wire x1="2.227" y1="-0.9289" x2="2.227" y2="0.9289" width="0.0508" layer="21" curve="45.282836" cap="flat"/>
+<circle x="0" y="0" radius="2.921" width="0.127" layer="21"/>
+<pad name="1" x="-1.27" y="-1.27" drill="0.7" shape="octagon"/>
+<pad name="2" x="1.27" y="-1.27" drill="0.7" shape="octagon"/>
+<pad name="3" x="1.27" y="1.27" drill="0.7" shape="octagon"/>
+<text x="3.175" y="0" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+<text x="3.175" y="-1.905" size="1.27" layer="27" ratio="12">&gt;VALUE</text>
+<text x="-1.905" y="-1.27" size="1.27" layer="51" ratio="10">1</text>
+<text x="0.635" y="-1.27" size="1.27" layer="51" ratio="10">2</text>
+<text x="0" y="0.635" size="1.27" layer="51" ratio="10">3</text>
+</package>
+</packages>
+<symbols>
+<symbol name="NPN">
+<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
+<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
+<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
+<text x="2.54" y="0" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
+<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
+<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="2N2222*" prefix="Q">
+<description>&lt;b&gt;NPN Transistor&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="NPN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO18">
+<connects>
+<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="G$1" pin="C" pad="3"/>
+<connect gate="G$1" pin="E" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+<technology name="A"/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2645,6 +2719,7 @@ Source: www.kingbright.com</description>
 <part name="R18" library="eagle-ltspice" deviceset="R" device="0207/10"/>
 <part name="R19" library="eagle-ltspice" deviceset="R" device="0207/10"/>
 <part name="R20" library="eagle-ltspice" deviceset="R" device="0207/10"/>
+<part name="Q1" library="gm-trans" deviceset="2N2222*" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2688,6 +2763,7 @@ Source: www.kingbright.com</description>
 <instance part="R18" gate="G$1" x="45.72" y="167.64" rot="MR180"/>
 <instance part="R19" gate="G$1" x="45.72" y="160.02" rot="MR180"/>
 <instance part="R20" gate="G$1" x="45.72" y="152.4" rot="MR180"/>
+<instance part="Q1" gate="G$1" x="30.48" y="190.5" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -3106,23 +3182,9 @@ Source: www.kingbright.com</description>
 <wire x1="198.12" y1="101.6" x2="142.24" y2="101.6" width="0.1524" layer="91"/>
 <junction x="198.12" y="101.6"/>
 <junction x="142.24" y="101.6"/>
-<pinref part="LED4" gate="G$1" pin="C"/>
-<wire x1="25.4" y1="152.4" x2="15.24" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="152.4" x2="15.24" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="160.02" x2="15.24" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="167.64" x2="15.24" y2="175.26" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="175.26" x2="15.24" y2="193.04" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="193.04" x2="142.24" y2="193.04" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="193.04" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="LED3" gate="G$1" pin="C"/>
-<wire x1="25.4" y1="160.02" x2="15.24" y2="160.02" width="0.1524" layer="91"/>
-<junction x="15.24" y="160.02"/>
-<pinref part="LED2" gate="G$1" pin="C"/>
-<wire x1="25.4" y1="167.64" x2="15.24" y2="167.64" width="0.1524" layer="91"/>
-<junction x="15.24" y="167.64"/>
-<pinref part="LED1" gate="G$1" pin="C"/>
-<wire x1="25.4" y1="175.26" x2="15.24" y2="175.26" width="0.1524" layer="91"/>
-<junction x="15.24" y="175.26"/>
+<pinref part="Q1" gate="G$1" pin="E"/>
+<wire x1="35.56" y1="193.04" x2="142.24" y2="193.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$40" class="0">
@@ -3187,6 +3249,37 @@ Source: www.kingbright.com</description>
 <pinref part="R20" gate="G$1" pin="1"/>
 <pinref part="LED4" gate="G$1" pin="A"/>
 <wire x1="40.64" y1="152.4" x2="33.02" y2="152.4" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$50" class="0">
+<segment>
+<wire x1="15.24" y1="175.26" x2="15.24" y2="193.04" width="0.1524" layer="91"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<wire x1="25.4" y1="175.26" x2="15.24" y2="175.26" width="0.1524" layer="91"/>
+<junction x="15.24" y="175.26"/>
+<wire x1="15.24" y1="167.64" x2="15.24" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="LED2" gate="G$1" pin="C"/>
+<wire x1="25.4" y1="167.64" x2="15.24" y2="167.64" width="0.1524" layer="91"/>
+<junction x="15.24" y="167.64"/>
+<wire x1="15.24" y1="160.02" x2="15.24" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="LED3" gate="G$1" pin="C"/>
+<wire x1="25.4" y1="160.02" x2="15.24" y2="160.02" width="0.1524" layer="91"/>
+<junction x="15.24" y="160.02"/>
+<pinref part="LED4" gate="G$1" pin="C"/>
+<wire x1="25.4" y1="152.4" x2="15.24" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="152.4" x2="15.24" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="Q1" gate="G$1" pin="C"/>
+<wire x1="15.24" y1="193.04" x2="25.4" y2="193.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="B"/>
+<wire x1="30.48" y1="187.96" x2="30.48" y2="182.88" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="182.88" x2="63.5" y2="182.88" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="182.88" x2="63.5" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="PCB1" gate="G$1" pin="~5"/>
+<wire x1="63.5" y1="157.48" x2="91.44" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
